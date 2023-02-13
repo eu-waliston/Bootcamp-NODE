@@ -32,23 +32,34 @@ const url = require("url");
 */
 
 // server
-const server = http.createServer((req,res) => {
-    const pathname  =  req.url
+
+
+const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');
+const dataObj = JSON.parse(data);
+
+
+const server = http.createServer((req, res) => {
+    const pathname = req.url
 
     console.log(req.url);
-    if(pathname === '/' || pathname === '/overview') {
+    if (pathname === '/' || pathname === '/overview') {
         res.end('This is the OVERVIEW 😍');
     } else if (pathname === '/product') {
         res.end('This is the PRODUCT 🍟');
+    } else if (pathname === '/api') {
+        
+        res.writeHead(200, { 'Cotent-type': "application/json" })
+        res.end(data);
+
     } else {
         res.writeHead(404, {
-            'Content-type' : 'text/html',
-            'my-own-header' : "deu ruim cachorro"
+            'Content-type': 'text/html',
+            'my-own-header': "deu ruim cachorro"
         });
         res.end('<h1>Page Not Found 😢</h1>');
     }
-    
-    
+
+
 });
 
 server.listen(8000, '127.0.0.1', () => {
