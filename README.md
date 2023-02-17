@@ -16,3 +16,11 @@
   <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white">
 </div>
 
+<div>
+<h4>Frequency</h4>
+<ul>
+  <li>Monday<li/>
+  <li>Wednesday<li/>
+  <li>Friday<li/>
+</ul>
+<div/>
