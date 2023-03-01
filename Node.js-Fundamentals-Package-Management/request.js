@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 axios
-    .get('https://www.google.com')
+    .get('https://www.youtube.com')
     .then((res) => {
         console.log(res);
     })
