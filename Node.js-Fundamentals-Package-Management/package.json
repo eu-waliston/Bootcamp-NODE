@@ -1,0 +1,16 @@
+{
+  "name": "node.js-fundamentals-package-management",
+  "version": "1.0.0",
+  "description": "node.js-fundamentals-package-management",
+  "main": "https.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node https.mjs"
+  },
+  "keywords": [],
+  "author": "Waliston",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.3.4"
+  }
+}
