@@ -21,7 +21,15 @@ const server = http.createServer((req, res) => {
 
     const itens = req.url.split('/');
 
-    if (itens[1] === 'friends') {
+    if (req.method === 'POST' && itens[1] === 'friends') {
+
+        req.on('data', (data) => {
+            const friend = data.toString();
+            console.log('Request:', friend);
+
+            friends.push(JSON.parse(friend));
+        })
+    } else if (req.method === 'GET' && itens[1] === 'friends') {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json')
 
@@ -35,7 +43,7 @@ const server = http.createServer((req, res) => {
         }
 
 
-    } else if (itens[1] === 'messages') {
+    } else if (req.mthod === 'GET ' && itens[1] === 'messages') {
         res.setHeader('Content-Type', 'text/html')
 
         res.write('<html>')
