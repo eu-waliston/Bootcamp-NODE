@@ -12,6 +12,14 @@ const friends = [
     }
 ];
 
+//Middlewares
+app.use((req,res,next) => {
+
+    const start = Date.now();
+    next();
+    const delta = Date.now() - start;
+    console.log(`${req.method} ${req.url} ${delta}ms`);
+})
 
 app.get('/', (req,res) => {
     res.status(200).json(friends)
