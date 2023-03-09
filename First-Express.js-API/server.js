@@ -13,7 +13,7 @@ const friends = [
 ];
 
 //Middlewares
-app.use((req,res,next) => {
+app.use((req, res, next) => {
 
     const start = Date.now();
     next();
@@ -21,18 +21,37 @@ app.use((req,res,next) => {
     console.log(`${req.method} ${req.url} ${delta}ms`);
 })
 
-app.get('/', (req,res) => {
+app.use(express.json())
+
+app.post('/friends', (req, res) => {
+
+    if (!req.body.name) {
+        return res.status(400).json({
+            error: 'Missing friend name'
+        })
+    }
+    const newFriend = {
+        name: req.body.name,
+        id: friends.length
+    }
+
+    friends.push(newFriend);
+
+    res.json(newFriend);
+})
+
+app.get('/', (req, res) => {
     res.status(200).json(friends)
 })
 
-app.get('/messages', (req,res) => {
+app.get('/messages', (req, res) => {
     res.status(200).send('<h1>Hello Albert!</h1>')
 })
 
-app.get('/friends/:friendID' , (req,res) => {
+app.get('/friends/:friendID', (req, res) => {
     const friendID = Number(req.params.friendID);
     const friend = friends[friendID];
-    if(friend){
+    if (friend) {
         res.status(200).json(friend)
     } else {
         res.status(404).json({
@@ -41,7 +60,7 @@ app.get('/friends/:friendID' , (req,res) => {
     }
 })
 
-app.post('/messages', (req,res) => {
+app.post('/messages', (req, res) => {
     console.log('Updating Messages...');
 })
 
