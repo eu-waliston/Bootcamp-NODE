@@ -3,7 +3,7 @@ const cors = require("cors");
 
 const planetsRouter = require("./routes/planets/planets.router");
 
-let whitelist = ['https://locahost:3000']
+let whitelist = ['http://localhost:3000']
 
 let corsOption = {
     origin: function(origin, callback) {
