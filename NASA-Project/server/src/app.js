@@ -6,6 +6,8 @@ const fs = require('fs');
 
 const planetsRouter = require("./routes/planets/planets.router");
 
+const launchesRouter = require("./routes/launches/launches.router");
+
 const app = express();
 
 //create a write stream (in apppend mode)
@@ -22,6 +24,7 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 
 
 app.use(planetsRouter);
+app.use(launchesRouter);
 app.get('/', (req,res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'index.html'))
 })
