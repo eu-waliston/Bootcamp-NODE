@@ -64,3 +64,4 @@
 ::1 - - [04/Apr/2023:00:59:30 +0000] "GET /img/background-large.jpg HTTP/1.1" 200 778461 "http://localhost:8000/history" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
 ::1 - - [04/Apr/2023:00:59:30 +0000] "GET /favicon.png HTTP/1.1" 304 - "http://localhost:8000/history" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
 ::1 - - [04/Apr/2023:00:59:30 +0000] "GET /manifest.json HTTP/1.1" 200 306 "http://localhost:8000/history" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+::ffff:127.0.0.1 - - [05/Apr/2023:18:23:09 +0000] "POST /launches HTTP/1.1" 404 148 "-" "insomnia/2023.1.0"
