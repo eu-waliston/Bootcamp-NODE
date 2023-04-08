@@ -37,7 +37,7 @@ async function httpAbortLaunch(id) {
   try {
     return await fetch(`${API_URL}/launches/${id}`, {
       method: "delete",
-    });
+    }); 
   } catch (error) {
     console.log(error);
     return {
