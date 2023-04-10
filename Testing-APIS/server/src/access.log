@@ -394,3 +394,6 @@
 ::1 - - [08/Apr/2023:00:09:43 +0000] "POST /launches HTTP/1.1" 201 206 "http://localhost:8000/launch" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
 ::1 - - [08/Apr/2023:00:09:43 +0000] "GET /launches HTTP/1.1" 200 409 "http://localhost:8000/launch" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
 ::1 - - [08/Apr/2023:00:09:56 +0000] "DELETE /launches/103 HTTP/1.1" 404 28 "http://localhost:8000/upcoming" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+::ffff:127.0.0.1 - - [10/Apr/2023:22:56:49 +0000] "GET /launches HTTP/1.1" 200 200 "-" "-"
+::ffff:127.0.0.1 - - [10/Apr/2023:23:00:08 +0000] "GET /launches HTTP/1.1" 200 200 "-" "-"
+::ffff:127.0.0.1 - - [10/Apr/2023:23:00:40 +0000] "GET /launches HTTP/1.1" 200 200 "-" "-"
