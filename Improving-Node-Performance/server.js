@@ -1,5 +1,6 @@
 const express = require("express");
 const cluster = require("cluster");
+const os = require("os");
 
 const server = express();
 
@@ -22,8 +23,13 @@ console.log("Running sever.js");
 
 if (cluster.isMaster) {
   console.log("Master has been started....");
-  cluster.fork();
-  cluster.fork();
+
+  const NUM_WORKS = os.cpus().length;
+
+  for(i = 0; i < NUM_WORKS; i++) {
+    cluster.fork();
+
+  }
 } else {
 
   console.log("Worker process started.");
