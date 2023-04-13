@@ -13,8 +13,8 @@ server.get("/", (req, res) => {
 });
 
 server.get("/timer", (req, res) => {
-  delay(9000);
-  res.send(`Ding ding ding! ${process.pid}`);
+  delay(4000);
+  res.send(`Beep beep beep! ${process.pid}`);
 });
 
 
