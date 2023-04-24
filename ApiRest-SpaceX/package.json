@@ -1,0 +1,17 @@
+{
+  "name": "apirest-spacex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Api.js",
+  "scripts": {
+    "start": "nodemon Api.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "expres": "^0.0.5",
+    "mongoose": "^7.0.5"
+  }
+}
