@@ -2,9 +2,14 @@ const fs = require("fs");
 require("dotenv").config();
 const https = require("https");
 const express = require("express");
+const helmet = require('helmet');
+
 const root = require("./routes/root.router");
 
 const app = express();
+
+//middlewares
+app.use(helmet());
 
 app.use("/", root);
 
