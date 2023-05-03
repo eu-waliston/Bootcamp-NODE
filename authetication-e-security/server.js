@@ -8,6 +8,11 @@ const root = require("./routes/root.router");
 
 const app = express();
 
+const config = {
+  CLIENT_ID:  process.env.CLIENT_ID,
+  CLIENT_SECRET: process.env.CLIENT_SECRET
+};
+
 //middlewares
 app.use(helmet());
 
