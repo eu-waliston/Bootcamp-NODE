@@ -18,7 +18,7 @@ root.get(
   passport.authenticate("google", {
     failureRedirect: "/failure",
     successRedirect: "/",
-    session: false,
+    session: true,
   }),
   (req, res) => {
     console.log("Google called us back!");

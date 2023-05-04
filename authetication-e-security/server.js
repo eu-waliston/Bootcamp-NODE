@@ -8,6 +8,7 @@ const cookieSession = require("cookie-session");
 const { Strategy } = require("passport-google-oauth20");
 
 const root = require("./routes/root.router");
+const passport = require("passport");
 const config = {
   CLIENT_ID: process.env.CLIENT_ID,
   CLIENT_SECRET: process.env.CLIENT_SECRET,
@@ -28,6 +29,16 @@ function verifyCallback(accessToken, refreshToken, profile, done) {
 
 passport.use(new Strategy(AUTH_OPTIONS, verifyCallback));
 
+//save the session to the cookie
+passport.serializeUser((user, done) => {
+  done(null, user)
+});
+
+//read the session from he cookie
+passport.deserializeUser((obj, done) => {
+  done(null, obj);
+});
+
 const app = express();
 
 //middlewares
@@ -39,8 +50,8 @@ app.use(
     keys: [config.COOKIE_KEY_1, config.COOKIE_KEY_1],
   })
 );
-
 app.use(passport.initialize());
+app.use(passport.session());
 
 app.use("/", root);
 
