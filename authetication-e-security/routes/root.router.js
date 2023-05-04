@@ -25,7 +25,10 @@ root.get(
   }
 );
 
-root.get("/auth/logout", (req, res) => {});
+root.get("/auth/logout", (req, res) => {
+    req.logout();
+    return res.redirect('/');
+});
 
 root.get("/failure", (req, res) => {
   return res.send("Failed to log in");
