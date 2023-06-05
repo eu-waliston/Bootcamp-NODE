@@ -2,7 +2,7 @@ const odersModel = require('./orders.model')
 
 module.exports = {
     Query: {
-        products: () => {
+        orders: () => {
             return odersModel.getAllOrders();
         }
     }
