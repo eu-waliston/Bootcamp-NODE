@@ -13,5 +13,10 @@ server.listen(PORT);
 console.log(`Listen on PORT ${PORT}`);
 
 io.on('connection', (socket) => {
-  console.log('a user connected');
+  console.log('a user connected', socket.id);
 })
+
+/*
+  As vezes no silêncio da noite
+  Eu fico imaginando nós dois
+*/
